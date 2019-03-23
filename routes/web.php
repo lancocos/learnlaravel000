@@ -21,6 +21,7 @@ Route::group(['middleware'=>'web'],function(){
     Route::get('/goods','GoodController@index');
     Route::get('/goods/detail','GoodController@detail');
     Route::get('/goods/add','GoodController@add');
+    Route::get('/goods/add/{id}','GoodController@edit');
     Route::post('/goods/add','GoodController@add1');
 });
 

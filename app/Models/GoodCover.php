@@ -8,4 +8,6 @@ class GoodCover extends Model
 {
     //
     protected $table='goods_covers';
+
+
 }

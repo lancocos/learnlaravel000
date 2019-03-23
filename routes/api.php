@@ -16,6 +16,6 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::post('/goods/add',function(){
-    echo 123;
-});
+Route::post('/goods/test/{id}','GoodController@test');
+Route::post('/goods/qb','GoodController@QueryBuilder');
+Route::post('/goods','GoodController@index');

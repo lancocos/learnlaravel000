@@ -15,8 +15,13 @@ class Test extends Controller
     }
 
     public function index(){
+        abort(404);
+        \Log::debug('userinfo',['id'=>1,'name'=>'imwz','password'=>md5('admin')]);
+
+        /*
         apc_add("v1",123);
         $re = apc_fetch("v1");
         echo $re;
+        */
     }
 }

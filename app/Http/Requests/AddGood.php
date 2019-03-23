@@ -24,10 +24,11 @@ class AddGood extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required|between:5,30',
+            'name'=>'required|between:5,30|unique:goods,name',
             'price'=>'required|digits_between:0.01,9999999',
             'category_id'=>'required',
             'branch_id'=>'required',
+            'content'=>'required'
         ];
     }
     public function messages()
@@ -36,7 +37,9 @@ class AddGood extends FormRequest
             'name.required'=>'标题不能为空',
             'name.between'=>'标题长度不合法',
             'price.require'=>'价格不能为空',
-            'price.digits_between'=>'dsad'
+            'price.digits_between'=>'价格必须为0.01 到999999',
+            'content.required'=>'内容不能为空',
+            'name.unique'=>'标题已经存在'
         ];
     }
 }
