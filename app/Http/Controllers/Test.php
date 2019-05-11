@@ -15,6 +15,8 @@ class Test extends Controller
     }
 
     public function index(){
+        phpinfo();
+        exit;
         abort(404);
         \Log::debug('userinfo',['id'=>1,'name'=>'imwz','password'=>md5('admin')]);
 

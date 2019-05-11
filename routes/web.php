@@ -23,5 +23,15 @@ Route::group(['middleware'=>'web'],function(){
     Route::get('/goods/add','GoodController@add');
     Route::get('/goods/add/{id}','GoodController@edit');
     Route::post('/goods/add','GoodController@add1');
+    Route::get('/redis1','RedisController@index');
+    Route::get('/subscribe','RedisController@subscribe');
+    Route::get('/publish','RedisController@publish');
+    Route::get('/r/{name}',function($name){
+        echo "r1".$name;
+    })->where('name','[a-z]+');
+    Route::get('/r/{id}',function($id){
+        echo "r2";
+    })->where('id','[0-9]+');
 });
+Route::get('/test/api','Hello@apitest');
 

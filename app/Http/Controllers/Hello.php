@@ -16,4 +16,7 @@ class Hello extends Controller
     public function index1(){
 
 }
+public function apitest (Request $request){
+        return response()->json(['date'=>time(),'msg'=>'ok'])->setCallback($request->get('callback'));
+}
 }
